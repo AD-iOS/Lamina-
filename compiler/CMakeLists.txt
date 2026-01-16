@@ -1,0 +1,3 @@
+set(CMAKE_CXX_STANDARD 20)
+file(GLOB_RECURSE COMPILER_SRC *.cpp */*.cpp)
+add_library(lmc SHARED ${COMPILER_SRC})
