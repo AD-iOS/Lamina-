@@ -1,6 +1,7 @@
 #include "repl.hpp"
 #include "../compiler/lexer.hpp"
 #include "../compiler/parser.hpp"
+#include "../compiler/generator/generator.hpp"
 #include "../compiler/generator/emit.hpp"
 #include "../runtime/vm.hpp"
 #include "../compiler/ast.hpp"

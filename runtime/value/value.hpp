@@ -5,10 +5,11 @@
 #pragma once
 #include <cstdint>
 #include <string>
+#include "../../include/lmx_export.hpp"
 
 namespace lmx::runtime {
 
-union Value {
+union LMVM_API Value {
     bool       b;
     int8_t     i8;
     uint8_t    u8;

@@ -8,7 +8,14 @@
 #include <vector>
 #include <string>
 
-#include "generator/generator.hpp"
+#include "../include/lmx_export.hpp"
+
+// Forward declarations to avoid circular dependencies
+namespace lmx {
+    class Generator;
+    enum class TokenType;
+    struct Token;
+}
 
 namespace lmx {
 static bool node_has_error = false;
@@ -26,7 +33,7 @@ enum ASTKind {
     Return,
 };
 
-struct ASTNode {
+struct LMC_API ASTNode {
     ASTKind kind;
     
     virtual ~ASTNode() = default;
@@ -45,7 +52,7 @@ struct TypeNode {
     TypeNode() = default;
 };
 
-struct ProgramASTNode final : public ASTNode {
+struct LMC_API ProgramASTNode final : public ASTNode {
     std::vector<std::shared_ptr<ASTNode>> children;
     
     explicit ProgramASTNode(

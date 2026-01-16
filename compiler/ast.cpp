@@ -7,6 +7,7 @@
 #include <iostream>
 #include <ostream>
 
+#include "generator/generator.hpp"
 #include "generator/emit.hpp"
 
 namespace lmx {

@@ -6,12 +6,13 @@
 #include <cstdint>
 #include <utility>
 #include <vector>
+#include "../include/lmx_export.hpp"
 #include "value/value.hpp"
 #include "../include/opcode.hpp"
 
 namespace lmx::runtime {
 
-struct  LMXState {
+struct LMVM_API LMXState {
     size_t pc{0};
     std::array<Value, 255> regs{};
 
@@ -19,7 +20,7 @@ struct  LMXState {
     //void* const_pool_top;
     std::vector<Op>* program;
 };
-class VirtualCore {
+class LMVM_API VirtualCore {
     void* const_pool_top;
     LMXState ste;
 

@@ -5,6 +5,7 @@
 
 #include "../compiler/lexer.hpp"
 #include "../compiler/parser.hpp"
+#include "../compiler/generator/generator.hpp"
 #include "../runtime/vm.hpp"
 
 static std::string read_file(const std::string& file_name) {

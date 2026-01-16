@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "generator.hpp"
+#include "../../include/lmx_export.hpp"
 #include "../../include/opcode.hpp"
 
 namespace lmx {
@@ -15,7 +15,7 @@ namespace runtime {
 struct Op;
 }
 #define REG_COUNT 255
-class Allocator {
+class LMC_API Allocator {
     std::bitset<REG_COUNT> bitset;
 public:
     Allocator();
@@ -24,7 +24,7 @@ public:
     void free(size_t i);
     bool is_free(size_t i);
 };
-class Generator {
+class LMC_API Generator {
 
 public:
     std::unordered_map<std::string, std::pair<bool, size_t>> vars;  // name <mutable, index register>

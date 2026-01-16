@@ -6,13 +6,13 @@
 #include <iostream>
 #include <memory>
 
-#include "ast.hpp"
+#include "../include/lmx_export.hpp"
 #include "lexer.hpp"
+#include "ast.hpp"
 
 namespace lmx {
-struct Token;
 
-class Parser {
+class LMC_API Parser {
     bool has_err{false};
     std::vector<Token>& tokens;
     size_t pos{0};
