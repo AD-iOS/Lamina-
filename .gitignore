@@ -1,4 +1,3 @@
-!.obj/*
+.obj/*
 Terminal
-!./pr
-!./config.ini
+git-pr/*
