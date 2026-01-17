@@ -1,0 +1,24 @@
+#!/bin/bash
+source ./config.ini
+cd "/var/mobile/Lamina-/"
+case $1 in
+  -ad | -AD | ad | AD)
+      git remote set-url origin https://github.com/AD-iOS/Lamina-.git
+      git add .
+      git commit -m "$text $(date +'%Y-%m-%d %H:%M')"
+      git push origin main
+      shift
+      ;;
+  -lm | lm)
+      git remote set-url origin https://github.com/Lamina-dev/Lamina.git
+      git add .
+      git commit -m "$text $(date +'%Y-%m-%d %H:%M')"
+      git push origin main
+      shift
+      ;;
+  * | -* | --*)
+      printf "$0 error '$1' unknown command\n";
+      shift
+      exit 1
+      ;;
+esac
