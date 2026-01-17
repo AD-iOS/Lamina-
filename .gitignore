@@ -1,3 +1,4 @@
 .obj
 Terminal
-pr-update.sh
+pr
+*.ini
