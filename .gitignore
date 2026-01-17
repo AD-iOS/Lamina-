@@ -1,4 +1,4 @@
 !.obj/*
 Terminal
-!pr
-!config.ini
+!./pr
+!./config.ini
