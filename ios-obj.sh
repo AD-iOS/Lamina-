@@ -86,12 +86,22 @@ ens() {
 }
 
 main() {
+    if command -v dpkg >/dev/null 2>&1; then
+        architecture=$(dpkg --print-architecture 2>/dev/null)
+        if [[ "$architecture" != "iphoneos-"* ]]; then
+            printf "%s error: 這是給 iOS jailbreak 用的\n你應該去用 cmake 而不是這個\n" "$0" >&2
+            exit 1
+        fi
+    fi
+
     mkdir -p $build/bin
     mkdir -p $build/lib
     build_lmvm_dylib
     build_lmc_dylib
     build_lm
+    printf "%s info: 編譯完成,日誌在 log/ 中" $0;
     ens
 }
 
-main
+mkdir -p "log";
+main 2>"log/err.log" | tee "log/info.log"
